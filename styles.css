@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+
+
+  --background-primary: #F4F5FB;
+  --background-secondary: #FFFFFF;
+
+  --color-brand: #CA3884;
+  --color-brand-hover: #A52C6B;
+  --color-danger: #C93847;
+
+  --content-primary: #080B12;
+  --content-secondary: #374151;
+  --content-tertiary: #9CA3AF;
+  --always-white: #FFFFFF;
+
+  --border-primary: #D1D5DB;
+  --border-hover: #B9C2D0;
+
+  --ff-family: "Inter", sans-serif;
+
+  --font-title: bold 24px/1.33 var(--ff-family);
+  --font-label: 500 16px/1.25 var(--ff-family);
+  --font-paragraph: 400 16px/1.25 var(--ff-family);
+  --font-link: 400 14px/1.14 var(--ff-family);
+
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  background-color: var(--background-primary);
+  width: 100%;
+
+}
+
+a,
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+#app {
+
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 78px 32px;
+
+  display: grid;
+}
+
+#btn-left {
+  background-image: url(icons/arrow_left.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  padding-left: 24px;
+
+  font: var(--font-link);
+  color: var(--color-brand);
+  text-decoration: none;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+h2 {
+  font: var(--font-title);
+  color: var(--content-primary);
+  margin-bottom: 44px;
+}
+
+header.desktop {
+  display: none;
+
+  text-align: center;
+  gap: 5px;
+
+  margin-top: 40px;
+
+  & img:first-child {
+    margin-right: 10px;
+  }
+}
+
+.add {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+
+  font: var(--font-paragraph);
+  color: var(--content-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: var(--content-tertiary);
+}
+
+button[type="submit"] {
+  width: 100%;
+  height: 48px;
+
+  font: var(--font-paragraph);
+  color: var(--always-white);
+  background-color: var(--color-brand);
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-brand-hover);
+}
+
+li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 16px;
+  margin-bottom: 12px;
+
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+
+  & input[type="checkbox"] {
+    font: var(--font-label);
+    width: 15px;
+    height: 15px;
+    border-radius: 6px;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    cursor: pointer;
+  }
+
+  & input[type="checkbox"]:after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    transform: translate(0%, -50%);
+    top: 50%;
+    left: 14.5px;
+
+    border: 1px solid var(--border-primary);
+    border-radius: 7px;
+  }
+
+  & input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: #fff;
+    background-color: var(--color-brand);
+
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 12px 16px;
+  margin-bottom: 12px;
+
+  background-color: var(--color-danger);
+  border-radius: 12px;
+  color: var(--always-white);
+
+  & img {
+    width: 15px;
+    height: 15px;
+    
+  }
+
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  & button {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+@media (width >=60rem) {
+  #app {
+    max-width: 40em;
+    padding: 78px 40px;
+  }
+
+  .add {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  header.desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button[type="submit"] {
+    width: 30%;
+  }
+}
