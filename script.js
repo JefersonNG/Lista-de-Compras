@@ -57,10 +57,6 @@ listItems.addEventListener('click', (event) => {
   notification.classList.remove('hidden');
   message.innerHTML = `<p>O item <strong>${nameItem}</strong> foi removido da lista</p>`;
 
-  setTimeout(() => {
-    clearTimeout(timeClose);
-    notification.classList.add('hidden');
-  }, 300);
 
 });
 
