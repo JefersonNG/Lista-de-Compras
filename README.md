@@ -32,4 +32,9 @@ Aplicação simples para criar e gerenciar uma **lista de compras**, permitindo 
 └── script.js
 ```
 
+## 🚀 Acesse o projeto
+
+👉 [Click aqui para acessar](https://jefersonng.github.io/Lista-de-Compras/)
+
+
 <img width="582" height="515" alt="image" src="https://github.com/user-attachments/assets/8ff3dfaf-8e30-4a72-9390-a25cc96bf63d" />
