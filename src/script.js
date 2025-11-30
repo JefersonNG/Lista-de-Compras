@@ -1,6 +1,6 @@
 import "./styles/styles.css"
 
-const input = document.querySelector('input[type="text"]');
+const input = document.querySelector('#input-item');
 const btnSubmit = document.querySelector('button[type="submit"]');
 const notification = document.querySelector('.noti');
 const message = notification.querySelector('p');
@@ -9,6 +9,8 @@ const btnCloseNoti = notification.querySelector('.close-noti');
 const listItems = document.querySelector('.items-list');
 
 let idItem = 0
+
+window.onload = load()
 
 input.focus();
 
@@ -52,8 +54,6 @@ function saveItem(item){
 
 }
 
-window.onload = load()
-
 btnSubmit.addEventListener('click', (event) => {
   event.preventDefault();
 
@@ -88,10 +88,10 @@ listItems.addEventListener('click', (event) => {
   localStorage.setItem("LIST", JSON.stringify(newList))
   load()
 
-  /* itemToRemove.remove();
+  itemToRemove.remove();
 
   notification.classList.remove('hidden');
-  message.innerHTML = `<p>O item <strong>${nameItem}</strong> foi removido da lista</p>`; */
+  message.innerHTML = `<p>O item <strong>${nameItem}</strong> foi removido da lista</p>`;
 
 
 });
