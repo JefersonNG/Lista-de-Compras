@@ -7,7 +7,7 @@ module.exports = {
   entry: path.resolve(__dirname, "src", "script.js"),
   output: {
     filename: "script.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     clean: true
   },
 
