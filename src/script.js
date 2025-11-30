@@ -12,7 +12,7 @@ let idItem = 0
 
 input.focus();
 
-function addItem(item) {
+function createItem(item) {
   const liElement = document.createElement('li');
   liElement.classList.add('item');
   idItem++
@@ -27,8 +27,32 @@ function addItem(item) {
       
     </button>
   `;
-  return liElement;
+
+  listItems.prepend(liElement);
 }
+
+function loadLocalStorage(){
+  const data = localStorage.getItem("LIST")
+  return data ? JSON.parse(data) : []
+}
+
+function load() {
+  listItems.innerHTML = ""
+  const list = loadLocalStorage()
+  list.forEach(item => {
+    createItem(item)
+  })
+}
+
+function saveItem(item){
+  const list = loadLocalStorage()
+  list.push(item)
+
+  localStorage.setItem("LIST", JSON.stringify(list))
+
+}
+
+window.onload = load()
 
 btnSubmit.addEventListener('click', (event) => {
   event.preventDefault();
@@ -41,7 +65,8 @@ btnSubmit.addEventListener('click', (event) => {
     return;
   }
 
-  listItems.prepend(addItem(input.value));
+  saveItem(input.value)
+  load()
 
   input.value = '';
   input.focus();
@@ -53,11 +78,20 @@ listItems.addEventListener('click', (event) => {
 
   const itemToRemove = event.target.closest('.item');
   const nameItem = itemToRemove.querySelector('span').textContent;
+  
+  const list = loadLocalStorage()
 
-  itemToRemove.remove();
+  const newList = list.filter(item => {
+    return item != nameItem
+  })
+
+  localStorage.setItem("LIST", JSON.stringify(newList))
+  load()
+
+  /* itemToRemove.remove();
 
   notification.classList.remove('hidden');
-  message.innerHTML = `<p>O item <strong>${nameItem}</strong> foi removido da lista</p>`;
+  message.innerHTML = `<p>O item <strong>${nameItem}</strong> foi removido da lista</p>`; */
 
 
 });

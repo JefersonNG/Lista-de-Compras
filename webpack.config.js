@@ -3,12 +3,16 @@ const CopyPlugin = require("copy-webpack-plugin")
 const path = require("path")
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: path.resolve(__dirname, "src", "script.js"),
   output: {
     filename: "script.js",
     path: path.resolve(__dirname, "docs"),
     clean: true
+  },
+  
+  devServer: {
+    static: "./docs"
   },
 
   plugins: [
