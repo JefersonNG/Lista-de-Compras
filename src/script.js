@@ -1,3 +1,5 @@
+import "./styles/styles.css"
+
 const input = document.querySelector('input[type="text"]');
 const btnSubmit = document.querySelector('button[type="submit"]');
 const notification = document.querySelector('.noti');
@@ -22,7 +24,7 @@ function addItem(item) {
     </label>
 
     <button type="button" class="item_remove" aria-label="Remover ${item}">
-      <img src="icons/recicle.svg" alt="">
+      
     </button>
   `;
   return liElement;

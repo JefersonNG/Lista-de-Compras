@@ -63,7 +63,7 @@ ul {
 }
 
 #btn-left {
-  background-image: url(icons/arrow_left.svg);
+  background-image: url(../icons/arrow_left.svg);
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain;
@@ -74,6 +74,18 @@ ul {
   text-decoration: none;
   margin-bottom: 16px;
   display: inline-block;
+}
+
+.item_remove {
+  background-image: url(../icons/delete-small.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+
+  border: none;
+  cursor: pointer;
 }
 
 h2 {
